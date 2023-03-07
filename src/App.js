@@ -5,13 +5,17 @@ import './App.css';
 import {Header} from './components/Header';
 import {Footer} from './components/Footer';
 import {Shop} from './components/Shop';
+import { ContextProvider } from './context';
 
 function App() {
   console.log("App started")
   return (
     <>
       <Header />
-        <Shop />
+        <ContextProvider>
+          <Shop />
+        </ContextProvider>
+        
       <Footer /> 
     </>
   );
