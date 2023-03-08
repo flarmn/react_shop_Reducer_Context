@@ -8,14 +8,11 @@ function BasketItem(props){
         displayName,
         price,
         quantity,
-        removeFromBasket = Function.prototype,
-        incQuantity = Function.prototype,
-        decQuantity = Function.prototype,
+
     } = props;
 
-    const {example} = useContext(ShopContext);
+    const {removeFromBasket, incQuantity, decQuantity} = useContext(ShopContext);
 
-    console.log("example", example)
 
     return <li className = "collection-item">
                 {displayName} <i className = "material-icons basket-quantity" onClick = {()=>decQuantity(mainId)}>remove</i> x {quantity} {' '} <i className = "material-icons basket-quantity" onClick = {()=>incQuantity(mainId)}>add</i>  = {price.finalPrice * quantity}
